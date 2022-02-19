@@ -1,48 +1,37 @@
 {
     "sourceProfile": "/profile_default",
-    "destinationProfile": "/home/${username}/.config/chromium/",
+    "destinationProfile": "C:\\Users\\${username}\\AppData\\Local\\Google\\Chrome\\User Data\\",
     "profile": {
         "prefix": "profile",
         "split": "_",
         "detail": [
             {
-                "profileName": "amirantungo",
-                "username": "amirantungo",
-                "password": "!As1234567890"
-            },
-            {
-                "profileName": "yoniapula",
-                "username": "yoniapula",
-                "password": "!As1234567890"
-            },
-            {
-                "profileName": "amranpalilati",
-                "username": "amranpalilati",
-                "password": "!As1234567890"
+                "profileName": "yourAccountUsername",
+                "username": "yourAccountUsername",
+                "password": "yourPassword"
             }
         ]
     },
     "proxyList": [],
     "openBrowserCommand": {
-        "applicationName": "chromium",
+        "applicationName": "C:\\Program Files\\Google\\Chrome\\Application\\Chrome.exe",
         "arguments": [
             "https://www.youtube.com",
             "--profile-directory="
         ]
     },
     "installationBrowserCommand": {
-        "applicationName": "chromium",
+        "applicationName": "C:\\Program Files\\Google\\Chrome\\Application\\Chrome.exe",
         "arguments": [
             "https://chrome.google.com/webstore/detail/youtube-video-skip-ad-tri/hpnelpabemhjfjgiibgkliipaehnfcjk",
             "https://chrome.google.com/webstore/detail/auto-quality-for-youtube/iaddfgegjgjelgkanamleadckkpnjpjc",
             "https://www.youtube.com/",
-            "chrome://settings/clearBrowserData",
             "--profile-directory="
         ]
     },
     "killBrowserCommand": {
-        "applicationName": "pkill",
-        "arguments": ["chromium"]
+        "applicationName": "taskkill",
+        "arguments": ["/F","/IM","chrome.exe"]
     },
     "jobName": "wait for the next countdown",
     "maxTime": 300,

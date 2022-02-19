@@ -9,9 +9,9 @@ import (
 	"io"
 	"io/ioutil"
 	"os"
-)
 
-const key string = "1768735535f927a62dd80d269d8c6c0ca600b1d94043a91b21c119c2d66bc6ec"
+	"github.com/novriyantoAli/go-gencry-file/function"
+)
 
 func main() {
 
@@ -29,51 +29,57 @@ func main() {
 		panic(err.Error())
 	}
 
-	bytes := make([]byte, 32) //generate a random 32 byte key for AES-256
-	if _, err := rand.Read(bytes); err != nil {
-		panic(err.Error())
-	}
-
-	// key := hex.EncodeToString(bytes) //encode key in bytes to string and keep as secret, put in a vault
-	// fmt.Printf("key to encrypt/decrypt : %s\n", key)
-
 	information := fmt.Sprintf("%s", byteValue)
+	// encryption infromation
+	function.Encryption(information)
 
-	encrypted := encrypt(information, key)
-	fmt.Printf("encrypted : %s\n", encrypted)
+	fmt.Printf("decrypt message: %s", function.Decryption())
 
-	f, err := os.Create("config.rein")
+	// bytes := make([]byte, 32) //generate a random 32 byte key for AES-256
+	// if _, err := rand.Read(bytes); err != nil {
+	// 	panic(err.Error())
+	// }
 
-	if err != nil {
-		panic(err.Error())
-	}
+	// // key := hex.EncodeToString(bytes) //encode key in bytes to string and keep as secret, put in a vault
+	// // fmt.Printf("key to encrypt/decrypt : %s\n", key)
 
-	defer f.Close()
+	// information := fmt.Sprintf("%s", byteValue)
 
-	_, err2 := f.WriteString(encrypted)
+	// encrypted := encrypt(information, key)
+	// fmt.Printf("encrypted : %s\n", encrypted)
 
-	if err2 != nil {
-		panic(err2.Error())
-	}
+	// f, err := os.Create("config.rein")
 
-	reinFile, err := os.Open("config.rein")
-	// if we os.Open returns an error then handle it
-	if err != nil {
-		panic(err.Error())
-	}
+	// if err != nil {
+	// 	panic(err.Error())
+	// }
 
-	// defer the closing of our jsonFile so that we can parse it later on
-	defer reinFile.Close()
+	// defer f.Close()
 
-	bytesValueRein, err := ioutil.ReadAll(reinFile)
-	if err != nil {
-		panic(err.Error())
-	}
+	// _, err2 := f.WriteString(encrypted)
 
-	encryptedRein := fmt.Sprintf("%s", bytesValueRein)
+	// if err2 != nil {
+	// 	panic(err2.Error())
+	// }
 
-	decrypted := decrypt(encryptedRein, key)
-	fmt.Printf("decrypted : %s\n", decrypted)
+	// reinFile, err := os.Open("config.rein")
+	// // if we os.Open returns an error then handle it
+	// if err != nil {
+	// 	panic(err.Error())
+	// }
+
+	// // defer the closing of our jsonFile so that we can parse it later on
+	// defer reinFile.Close()
+
+	// bytesValueRein, err := ioutil.ReadAll(reinFile)
+	// if err != nil {
+	// 	panic(err.Error())
+	// }
+
+	// encryptedRein := fmt.Sprintf("%s", bytesValueRein)
+
+	// decrypted := decrypt(encryptedRein, key)
+	// fmt.Printf("decrypted : %s\n", decrypted)
 
 }
 

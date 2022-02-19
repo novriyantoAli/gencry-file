@@ -1,6 +1,6 @@
 {
     "sourceProfile": "/profile_default",
-    "destinationProfile": "C:\\Users\\rhein\\AppData\\Local\\Google\\Chrome\\User Data\\",
+    "destinationProfile": "/home/rhein/.config/chromium/",
     "profile": {
         "prefix": "profile",
         "split": "_",
@@ -24,14 +24,14 @@
     },
     "proxyList": [],
     "openBrowserCommand": {
-        "applicationName": "C:\\Program Files\\Google\\Chrome\\Application\\Chrome.exe",
+        "applicationName": "chromium",
         "arguments": [
             "https://www.youtube.com",
             "--profile-directory="
         ]
     },
     "installationBrowserCommand": {
-        "applicationName": "C:\\Program Files\\Google\\Chrome\\Application\\Chrome.exe",
+        "applicationName": "chromium",
         "arguments": [
             "https://chrome.google.com/webstore/detail/youtube-video-skip-ad-tri/hpnelpabemhjfjgiibgkliipaehnfcjk",
             "https://chrome.google.com/webstore/detail/auto-quality-for-youtube/iaddfgegjgjelgkanamleadckkpnjpjc",
@@ -41,8 +41,8 @@
         ]
     },
     "killBrowserCommand": {
-        "applicationName": "taskkill",
-        "arguments": ["/F","/IM","chrome.exe"]
+        "applicationName": "pkill",
+        "arguments": ["chromium"]
     },
     "jobName": "wait for the next countdown",
     "maxTime": 300,

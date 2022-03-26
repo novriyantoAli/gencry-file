@@ -1,4 +1,9 @@
 {
+    "wifiConfig": {
+        "active": true,
+        "connectionName": "TENRY_HOME",
+        "password": "SATUdua3"
+    },
     "sourceProfile": "/profile_default",
     "destinationProfile": "/home/${username}/.config/chromium/",
     "profile": {
